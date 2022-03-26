@@ -1,0 +1,10 @@
+@font-face {
+  font-family: Wisdom;
+  src: url("./fonts/wisdom.woff");
+}
+
+.help {
+  text-align: center;
+  font-family: Wisdom;
+  align-self: center;
+}
