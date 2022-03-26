@@ -1,0 +1,41 @@
+@font-face {
+    font-family: Wisdom;
+    src: url("./fonts/wisdom.woff");
+  }
+  
+  /* .help {
+    text-align: center;
+    font-family: Wisdom;
+    align-self: center;
+  } */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    line-height: 1.2;
+    font-family: wisdom;
+    font-size: 15px;
+    color: #4c4c4c;
+    box-sizing: border-box;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width: 320px    ;
+}
+body * {
+    box-sizing: block;
+}
+div {
+    display: block;
+}
+p, .paragraph {
+    font-weight: 400;
+    color: #4c4c4c;
+    font-size: 15px;
+    line-height: 1.8;
+    font-family: wisdom;
+}
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
