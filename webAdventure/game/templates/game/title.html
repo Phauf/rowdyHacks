@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>WebGame-Sample</title>
-    <link rel="stylesheet" href="./assets/title.css" />
+    <link rel="stylesheet" href="{% static 'game/css/title.css' %}" />
   </head>
   <body class="help">
-    <img class="help" src="./assets/images/titleScreen-sample.png" />
+    <img class="help" src="{% static 'game/images/titleScreen-sample.png' %}" />
     <h1>This is the title thing</h1>
     <p>Something brief like press something to enter/start</p>
     <aside>
       <p><br />Everything will be centered and styled stuff</p>
+      <p>no</p>
     </aside>
   </body>
 </html>
