@@ -1,8 +1,11 @@
 @font-face {
   font-family: Wisdom;
-  src: url("./fonts/wisdom.woff");
+  src: url("../../game/fonts/wisdom.woff");
 }
-
+@font-face {
+  font-family: twoson;
+  src: url("../../game/fonts/twoson.woff");
+}
 /* .help {
     text-align: center;
     font-family: Wisdom;
@@ -13,17 +16,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: wismdom;
+}
+body {
+  text-align: center;
+  font-family: wisdom;
+  align-self: center;
 }
 body {
   line-height: 1.2;
   font-family: wisdom;
-  font-size: 15px;
-  color: #4c4c4c;
-  box-sizing: border-box;
+  font-size: 12px;
   display: block;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   min-width: 320px;
+  min-height: 100%;
 }
 body * {
   box-sizing: block;
@@ -31,12 +39,84 @@ body * {
 div {
   display: block;
 }
+h1{
+  color:rgb(97, 120, 194);
+  font-size: 40px;
+  padding-bottom: 10px;
+  font-family: twoson;
+}
 p,
 .paragraph {
-  font-weight: 400;
-  color: #4c4c4c;
+  padding-top: 10px;
+  color: #1bb15e;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1;
   font-family: wisdom;
 }
-@import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap");
+ul li {
+  padding-top: 10px;
+  color: #1bb15e;
+  font-size: 15px;
+  line-height: 1;
+  font-family: wisdom;
+  list-style-type: none; 
+}
+.container{
+  min-width: 500px;
+  margin:auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.page-outer{
+  /* background-color: #3c4041; */
+  background-color: #000000ef;
+  position: relative;
+}
+.section-full{
+  min-height: 100vh;
+  padding: 4rem 3rem;
+  opacity: .4s;
+}
+.title{
+  padding: 1rem;
+  align-items: normal;
+}
+.image{
+  min-width: 300px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.text{
+  min-width: 300px;
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 10px;
+}
+.btn{
+  font-size: 22px;
+  font-family: "Playfair Display", serif;
+  text-transform: capitalize;
+  padding: 16px 44px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  transition: 0.2s ease;
+}
+.simpbtn {
+  color: #08fdd8;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-family: "Open Sans",sans-serif;
+  text-decoration: none;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+}

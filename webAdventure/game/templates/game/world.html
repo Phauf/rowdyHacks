@@ -3,21 +3,34 @@
 <html>
   <head>
     <title>WebGame-Sample</title>
-    <link rel="stylesheet" href="{% static 'game/css/title.css' %}" />
+    <link rel="stylesheet" href="{% static 'game/css/style.css' %}" />
   </head>
   <body>
-    {% comment %} This will show the image using the image name {% endcomment %}
-    {% with 'game/images/'|add:visual|add:'.png' as image_static %}
-    <img src="{% static image_static %}" />
-    {% endwith %}
-    {% comment %} Printing the title and description {% endcomment %}
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
-    {% comment %} the markup below will print the items {% endcomment %}
-    <ul>
-      {% for item in yousee %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+    <div class="page-outer">
+
+      <section class="section-full">
+        <div class="container image">
+          {% comment %} This will show the image using the image name {% endcomment %}
+          {% with 'game/images/'|add:visual|add:'.png' as image_static %}
+          <img src="{% static image_static %}" />
+          {% endwith %}
+        </div>
+
+        {% comment %} Printing the title and description {% endcomment %}
+        <h1>{{ title }}</h1>
+
+        <div class="container text">
+          <p>{{ description }}</p>
+        </div>
+        {% comment %} the markup below will print the items {% endcomment %}
+        
+        <ul>
+          {% for item in yousee %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+    </div>
   </body>
 </html>

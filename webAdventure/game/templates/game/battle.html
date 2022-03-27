@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Battle</title>
+    <!-- <link rel="stylesheet" href="{% static 'game/css/title.css' %}" /> -->
+  </head>
+  <body>
+    <!-- This will show the image using the image name -->
+    {% if roll == true %}
+        {% with 'game/images/'|add:rolled|add:'.png' as image_static %}
+        <img src="{% static image_static %}" />
+        {% endwith %}
+    {% else %}
+        <img src="{% static 'game/images/shaking.gif' %}">
+    {% endif %}
+  </body>
+</html>

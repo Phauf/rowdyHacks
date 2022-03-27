@@ -1,5 +1,13 @@
+from curses import keyname
+from multiprocessing import Event
 from optparse import TitledHelpFormatter
+from re import L
+from tkinter.tix import DisplayStyle
+from turtle import onkey, onkeypress, onkeyrelease
 from django.shortcuts import render
+
+import random
+from django import forms
 
 # Create your views here.
 from django.shortcuts import render
@@ -17,9 +25,53 @@ welcome = [
         'visual': "img-6-2", 'title': "The Wrestling room", 'description': "I DON'T WANT TO TYPE ANYMORE", 'yousee': ['sword', 'chair', 'enemy']
     },
     {
-        'title': "The Room", 'description': "A strange futuristic vibe fills the room", 'yousee': ['monitor', 'table', 'computer']
-    }
+        'visual': "img-6-1", 'title': "The Room", 'description': "A strange futuristic vibe fills the room", 'yousee': ['monitor', 'table', 'computer']
+    },
+    {
+        'visual': "img-enemy", 'title': "An enemy approaches", 'description': "You find it astonishing that there are still monsterous beasts roaming the lands", 'yousee': ["enemy"]
+    },
+    {
+        'visual': "img-key", 'title': "An objects shines", 'description': "you traverse the maladroit path and see something catch your eye", 'yousee': ["key"]
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
 ]
+
+
+class NewTaskForm(forms.Form):
+    terminal = forms.CharField(label=">")
+
+    def clean_terminal(self):
+        data = self.clean_terminal["terminal"]
+        return data
 
 
 # This will show the title.html page
@@ -32,16 +84,27 @@ def world(request):
     # welcome[changeMeDependingOnPosition][0]
     # welcome[changeMeDependingOnPosition][1]
     # welcome[changeMeDependingOnPosition][2]
-    visual = welcome[0]['visual']
-    title = welcome[0]['title']
-    description = welcome[0]['description']
-    yousee = welcome[0]['yousee']
+    visual = welcome[4]['visual']
+    title = welcome[4]['title']
+    description = welcome[4]['description']
+    yousee = welcome[4]['yousee']
 
 # These are the variables that are sent to the html document
     context = {
         "visual": visual,
         "title": title,
         "description": description,
-        "yousee": yousee
+        "yousee": yousee,
+        "terminal": NewTaskForm(),
     }
     return render(request, "game/world.html", context)
+
+
+def battle(request):
+    # button stuff for the gifs
+    roll = 'false'
+    rolled = random
+    context = {
+        "roll": roll
+    }
+    return render(request, 'game/battle.html')
