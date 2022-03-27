@@ -1,5 +1,11 @@
+from curses import keyname
+from multiprocessing import Event
 from optparse import TitledHelpFormatter
+from tkinter.tix import DisplayStyle
+from turtle import onkey, onkeypress, onkeyrelease
 from django.shortcuts import render
+
+from django import forms
 
 # Create your views here.
 from django.shortcuts import render
@@ -22,6 +28,10 @@ welcome = [
 ]
 
 
+class NewTaskForm(forms.Form):
+    terminal = forms.CharField(label=">")
+
+
 # This will show the title.html page
 def title(request):
     return render(request, "game/title.html")
@@ -42,7 +52,8 @@ def world(request):
         "visual": visual,
         "title": title,
         "description": description,
-        "yousee": yousee
+        "yousee": yousee,
+        "terminal": NewTaskForm()
     }
     return render(request, "game/world.html", context)
 
