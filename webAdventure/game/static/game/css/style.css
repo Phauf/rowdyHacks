@@ -57,7 +57,10 @@ p,
 a{
   color: #ffffffa6;
   text-decoration: none;
-  
+}
+a:-webkit-any-link {
+  color: #ffffffa6;
+  text-decoration: none;
 }
 ul li {
   padding-top: 10px;
@@ -118,6 +121,7 @@ ul li {
   position: relative;
   z-index: 1;
   transition: 0.2s ease;
+  text-decoration: none;
 }
 .simpbtn {
   color: #08fdd8;
