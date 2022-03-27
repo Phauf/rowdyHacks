@@ -1,10 +1,11 @@
 from random import randint
 
-health = 50
+health = 200
 enemyhealth = 10
 bosshealth = 20
 dbhealth = 20
 key = 0
+
 
 
 def main():
@@ -111,30 +112,34 @@ def main():
             print("South or East?")
 
         nextMove = input()
-        if (nextMove == "East"):
-            y = east(x, y, key)
-            if (y == False):
+        if (nextMove == "E"):
+            y = y+1
+            bobo = econd(x, y, key)
+            if (bobo == False):
                 break
             else:
                 continue
 
-        elif (nextMove == "West"):
-            y = west(x, y, key)
-            if (y == False):
+        elif (nextMove == "W"):
+            y = y-1
+            bobo = wcond(x, y, key)
+            if (bobo == False):
                 break
             else:
                 continue
 
-        elif (nextMove == "North"):
-            x = north(x, y, key)
-            if (x == False):
+        elif (nextMove == "N"):
+            x = x - 1
+            bobo = ncond(x, y, key)
+            if (bobo == False):
                 break
             else:
                 continue
 
-        elif (nextMove == "South"):
-            x = south(x, y, key)
-            if (x == False):
+        elif (nextMove == "S"):
+            x = x+1
+            bobo = scond(x, y, key)
+            if (bobo == False):
                 break
             else:
                 continue
@@ -143,90 +148,90 @@ def main():
             print("Duhh!! You're moving in the wrong direction!!")
 
 
-def north(x, y, key):
-    x = x-1
+def ncond(x, y, key):
     enemy = isEnemy(x, y)
     if (enemy):
         if(EnemyFight(health, enemyhealth) == False):
-            return True
+            return False
     Key = isKey(x, y, key)
     boss = isBoss(x, y)
     if (boss):
         if(BossFight(health, bosshealth) == False):
-            return (True)
+            return False
+
     villager = isVillager(x, y)
     doubleEnemey = isDoubleEnemy(x, y)
     if (doubleEnemey):
         if(DoubleEnemyFight(health, dbhealth) == False):
-            return (True)
+            return False
         elif(DoubleEnemyFight(health, dbhealth) == True):
             key = key+1
 
-    return(x)
+    return True
 
 
-def south(x, y, key):
-    x = x+1
+def scond(x, y, key):
     enemy = isEnemy(x, y)
     if (enemy):
         if(EnemyFight(health, enemyhealth) == False):
-            return True
+            return False
+
+    Key = isKey(x, y, key)
+    boss = isBoss(x, y)
+    if(boss):
+        if(BossFight(health, bosshealth) == False):
+            return False
+
+    villager = isVillager(x, y)
+    doubleEnemey = isDoubleEnemy(x, y)
+    if (doubleEnemey):
+        if(DoubleEnemyFight(health, dbhealth) == False):
+            return False
+        elif(DoubleEnemyFight(health, dbhealth) == True):
+            key = key+1
+    return True
+
+
+def econd(x, y, key):
+
+    enemy = isEnemy(x, y)
+    if (enemy):
+        if(EnemyFight(health, enemyhealth) == False):
+            return False
     Key = isKey(x, y, key)
     boss = isBoss(x, y)
     if (boss):
         if(BossFight(health, bosshealth) == False):
-            return (True)
+            return False
     villager = isVillager(x, y)
     doubleEnemey = isDoubleEnemy(x, y)
     if (doubleEnemey):
         if(DoubleEnemyFight(health, dbhealth) == False):
-            return (True)
+            return False
         elif(DoubleEnemyFight(health, dbhealth) == True):
             key = key+1
-    return(x)
+    return(True)
 
 
-def east(x, y, key):
-    y = y+1
+def wcond(x, y, key):
     enemy = isEnemy(x, y)
     if (enemy):
         if(EnemyFight(health, enemyhealth) == False):
-            return True
-    Key = isKey(x, y, key)
-    boss = isBoss(x, y)
-    if (boss):
-        if(BossFight(health, bosshealth) == False):
-            return (True)
-    villager = isVillager(x, y)
-    doubleEnemey = isDoubleEnemy(x, y)
-    if (doubleEnemey):
-        if(DoubleEnemyFight(health, dbhealth) == False):
-            return (True)
-        elif(DoubleEnemyFight(health, dbhealth) == True):
-            key = key+1
-    return(y)
-
-
-def west(x, y, key):
-    y = y-1
-    enemy = isEnemy(x, y)
-    if (enemy):
-        if(EnemyFight(health, enemyhealth) == False):
-            y = False
+            return False
 
     Key = isKey(x, y, key)
     boss = isBoss(x, y)
     if (boss):
         if(BossFight(health, bosshealth) == False):
-            return (True)
+            return False
     villager = isVillager(x, y)
     doubleEnemey = isDoubleEnemy(x, y)
     if (doubleEnemey):
         if(DoubleEnemyFight(health, dbhealth) == False):
-            return (True)
+            return False
         elif(DoubleEnemyFight(health, dbhealth) == True):
             key = key+1
-    return(y)
+    return True
 
 
 def isEnemy(x, y):
@@ -290,8 +295,8 @@ def BossFight(health, bosshealth):
 
 def isVillager(x, y):
 
-    if(x == 6 and y == 4):
-        ("Villager: Help me! There are 2 enemies to your west, kill them and I will reward you.")
+    if(x == 4 and y == 6):
+        print("Villager: Help me! There are 2 enemies to your west, kill them and I will reward you.")
         return True
     else:
         return False
