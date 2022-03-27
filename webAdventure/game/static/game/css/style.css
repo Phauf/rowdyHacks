@@ -53,6 +53,14 @@ p,
   line-height: 1;
   font-family: wisdom;
 }
+ul li {
+  padding-top: 10px;
+  color: #1bb15e;
+  font-size: 15px;
+  line-height: 1;
+  font-family: wisdom;
+  list-style-type: none; 
+}
 .container{
   min-width: 500px;
   margin:auto;
@@ -60,7 +68,8 @@ p,
   padding-right: 20px;
 }
 .page-outer{
-  background-color: #3c4041;
+  /* background-color: #3c4041; */
+  background-color: #000000ef;
   position: relative;
 }
 .section-full{
