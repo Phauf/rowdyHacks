@@ -42,6 +42,7 @@ div {
 h1{
   color:rgb(97, 120, 194);
   font-size: 40px;
+  padding-top: 10px;
   padding-bottom: 10px;
   font-family: twoson;
 }
@@ -53,6 +54,14 @@ p,
   line-height: 1;
   font-family: wisdom;
 }
+a{
+  color: #ffffffa6;
+  text-decoration: none;
+}
+a:-webkit-any-link {
+  color: #ffffffa6;
+  text-decoration: none;
+}
 ul li {
   padding-top: 10px;
   color: #1bb15e;
@@ -62,6 +71,7 @@ ul li {
   list-style-type: none; 
 }
 .container{
+  display: inline-block;
   min-width: 500px;
   margin:auto;
   padding-left: 20px;
@@ -71,6 +81,13 @@ ul li {
   /* background-color: #3c4041; */
   background-color: #000000ef;
   position: relative;
+}
+.typed-out
+{
+  overflow: hidden;
+  border-right: .15e  solid orange;
+  font-size: 1.6rem;
+  width: 0;
 }
 .section-full{
   min-height: 100vh;
@@ -95,15 +112,16 @@ ul li {
 }
 .btn{
   font-size: 22px;
-  font-family: "Playfair Display", serif;
+  font-family: wisdom;
   text-transform: capitalize;
-  padding: 16px 44px;
-  border-radius: 5px;
+  padding: 16px 250px;
+  border-radius: 8px;
   font-weight: 600;
   border: 0;
   position: relative;
   z-index: 1;
   transition: 0.2s ease;
+  text-decoration: none;
 }
 .simpbtn {
   color: #08fdd8;

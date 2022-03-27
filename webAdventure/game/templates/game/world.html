@@ -23,14 +23,35 @@
           <p>{{ description }}</p>
         </div>
         {% comment %} the markup below will print the items {% endcomment %}
-        
+
         <ul>
           {% for item in yousee %}
           <li>{{ item }}</li>
           {% endfor %}
         </ul>
-      </section>
 
+        <!-- <form action = "" method = "post">
+          {% csrf_token %}
+          <label for="your_name">Your name: </label>
+          <input id="your_name" type="text" name="your_name">
+          <input type="submit" value="OK">
+        </form> -->
+
+        <div class=" choice btn">
+          <a href="{% url 'main:world' %}">Start</a>
+          <a href="{% url 'main:world' %}">Startt</a>
+          <a href="{% url 'main:world' %}">Startttt</a>
+          <a href="{% url 'main:world' %}">Starttttt</a>
+        </btn>
+
+<!-- 
+      {% if o == north %}
+      <p>north</p>
+      {%else%}
+      <p>nothing</p>
+      {%endif%} -->
+    </section>
+    {{ direction }}
     </div>
   </body>
 </html>
