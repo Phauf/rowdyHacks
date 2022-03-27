@@ -1,10 +1,10 @@
 @font-face {
   font-family: Wisdom;
-  src: url("game/fonts/wisdom.woff");
+  src: url("../../game/fonts/wisdom.woff");
 }
 
 body {
   text-align: center;
-  font-family: Wisdom;
+  font-family: wisdom;
   align-self: center;
 }
