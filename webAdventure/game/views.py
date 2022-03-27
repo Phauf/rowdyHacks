@@ -45,3 +45,9 @@ def world(request):
         "yousee": yousee
     }
     return render(request, "game/world.html", context)
+
+
+def battle(request):
+    # logic for the
+
+    return render(request, 'game/battle.html')
