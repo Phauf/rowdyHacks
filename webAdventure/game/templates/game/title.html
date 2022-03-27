@@ -3,18 +3,28 @@
 <html>
   <head>
     <title>WebGame-Sample</title>
-    <link rel="stylesheet" href="{% static 'game/css/title.css' %}" />
+    <link rel="stylesheet" href="{% static 'game/css/style.css' %}" />
   </head>
   <body>
-    <img src="{% static 'game/images/titleSample.png' %}" />
-    <h1>This is the title thing</h1>
-    <p>Something brief like press something to enter/start</p>
-    <aside>
-      <p><br />Everything will be centered and styled stuff</p>
-    </aside>
-    <!-- do something with this button so it send world in the url to move on -->
-    <form>
-      <input type="submit" value="start" name="start">
-    </form>
+    <div class="page-outer">
+      <section class="section-full">
+        <div class="container image">
+          <img src="{% static 'game/images/titleSample.png' %}" />
+        </div>
+        <h1>This is the title thing</h1>
+        <div class="container text">
+            <p>Something brief like press something to enter/start</p>
+            <aside>
+              <p><br />Everything will be centered and styled stuff</p>
+            </aside>
+          </div>
+          <!-- do something with this button so it send world in the url to move on -->
+          <div class="btn">
+            <form>
+              <a href="{% url 'world' %}"><input type="submit" value="start" name="start"></a>
+            </form>
+          </div>
+      </section>
+  </div>
   </body>
 </html>
