@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+import random
 from django import forms
 
 # Create your views here.
@@ -18,14 +19,50 @@ welcome = [
         'visual': "img-6-2", 'title': "The Wrestling room", 'description': "I DON'T WANT TO TYPE ANYMORE", 'yousee': ['sword', 'chair', 'enemy']
     },
     {
-        'title': "The Room", 'description': "A strange futuristic vibe fills the room", 'yousee': ['monitor', 'table', 'computer']
-    }
+        'visual': "img-6-1", 'title': "The Room", 'description': "A strange futuristic vibe fills the room", 'yousee': ['monitor', 'table', 'computer']
+    },
+    {
+        'visual': "img-enemy", 'title': "An enemy approaches", 'description': "You find it astonishing that there are still monsterous beasts roaming the lands", 'yousee': ["enemy"]
+    },
+    {
+        'visual': "img-key", 'title': "An objects shines", 'description': "you traverse the maladroit path and see something catch your eye", 'yousee': ["key"]
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
+    {
+        'visual': "", 'title': "", 'description': "", 'yousee': ""
+    },
 ]
 
 
 class NewTaskForm(forms.Form):
     terminal = forms.CharField(label=">")
-
+    
 # This will show the title.html page
 def title(request):
     return render(request, "game/title.html")
@@ -57,6 +94,10 @@ def world(request):
 
 
 def battle(request):
-    # logic for the
-
+    # button stuff for the gifs
+    roll = 'false'
+    rolled = random
+    context = {
+        "roll": roll
+    }
     return render(request, 'game/battle.html')
