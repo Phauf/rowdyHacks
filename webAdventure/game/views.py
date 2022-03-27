@@ -1,9 +1,4 @@
-from curses import keyname
-from multiprocessing import Event
-from optparse import TitledHelpFormatter
-from re import L
-from tkinter.tix import DisplayStyle
-from turtle import onkey, onkeypress, onkeyrelease
+
 from django.shortcuts import render
 
 import random
