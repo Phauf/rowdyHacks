@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebGame-Sample</title>
+    <link rel="stylesheet" href="{% static 'game/css/title.css' %}" />
+  </head>
+  <body>
+    {% comment %} This will show the image using the image name {% endcomment %}
+    {% with 'game/images/'|add:visual|add:'.png' as image_static %}
+    <img src="{% static image_static %}" />
+    {% endwith %}
+    {% comment %} Printing the title and description {% endcomment %}
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    {% comment %} the markup below will print the items {% endcomment %}
+    <ul>
+      {% for item in yousee %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
