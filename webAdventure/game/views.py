@@ -1,8 +1,3 @@
-from curses import keyname
-from multiprocessing import Event
-from optparse import TitledHelpFormatter
-from tkinter.tix import DisplayStyle
-from turtle import onkey, onkeypress, onkeyrelease
 from django.shortcuts import render
 
 from django import forms
@@ -31,7 +26,6 @@ welcome = [
 class NewTaskForm(forms.Form):
     terminal = forms.CharField(label=">")
 
-
 # This will show the title.html page
 def title(request):
     return render(request, "game/title.html")
@@ -46,6 +40,7 @@ def world(request):
     title = welcome[0]['title']
     description = welcome[0]['description']
     yousee = welcome[0]['yousee']
+    direction = request.GET
 
 # These are the variables that are sent to the html document
     context = {
@@ -53,8 +48,11 @@ def world(request):
         "title": title,
         "description": description,
         "yousee": yousee,
-        "terminal": NewTaskForm()
+        "terminal": NewTaskForm(),
+        "direction": direction
     }
+# 
+
     return render(request, "game/world.html", context)
 
 
